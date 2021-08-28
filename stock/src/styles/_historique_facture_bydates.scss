@@ -1,0 +1,39 @@
+.child_histo_fact_dates {
+  width: 80%;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  padding: 20px 0 20px 0;
+  background: $favouriteColor;
+  form {
+    width: 70%;
+    display: $f;
+    justify-content: space-evenly;
+  }
+  input[type="date"] {
+      padding: 7px 0 7px 0;
+      width:400px;
+      min-width: 300px;
+      border: $n;
+      outline: $n;
+      text-align: $c;
+  }
+  button{
+    background: $favouriteColor;
+    border: $n;
+    outline: $n;
+    color: $w;
+    padding: 6px 0 7px 0;
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0 $rgb;
+    width: 200px;
+    position: relative;
+    top:-1px;
+    span {
+      position: relative;
+      left: -8px;
+      font-size: 20px;
+      top: 4px;
+    }
+  }
+}

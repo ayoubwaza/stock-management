@@ -1,0 +1,211 @@
+.histo_fuct {
+  width: $wd;
+  height: 100%;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  .headers_fact {
+    width: $wdd;
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    background: $favouriteColor;
+    padding: 10px 0 15px 0;
+
+    .search_bar_fact {
+      position: relative;
+      input {
+        padding-left: 32px;
+        background: $w;
+        width: 200px;
+        transition: all 400ms ease-out;
+        box-shadow: 0 5px 5px 0 $rgb;
+        &:focus {
+          width: 300px;
+        }
+      }
+      span {
+        position: absolute;
+        top: 4px;
+        z-index: 9999;
+        left: 7px;
+        font-size: 23px;
+      }
+    }
+    .handle_btns_histo_func {
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      div {
+        margin-right: 10px;
+      }
+      button {
+        background: $favouriteColor;
+        border: $n;
+        outline: $n;
+        color: $w;
+        padding: 6px 0 7px 0;
+        cursor: pointer;
+        box-shadow: 0 5px 5px 0 $rgb;
+        width: 200px;
+        span {
+          position: relative;
+          left: -8px;
+          font-size: 20px;
+          top: 4px;
+        }
+      }
+      ._home_fact_histo {
+        button {
+          background: $favouriteColor;
+          border: $n;
+          outline: $n;
+          color: $w;
+          padding: 6px 0 7px 0;
+          cursor: pointer;
+          box-shadow: 0 5px 5px 0 $rgb;
+          width: 200px;
+          span {
+            position: relative;
+            top: 1.88px;
+          }
+        }
+      }
+      ._calend_fact_histo {
+        button {
+          background: $favouriteColor;
+          border: $n;
+          outline: $n;
+          color: $w;
+          padding: 6px 0 7px 0;
+          cursor: pointer;
+          box-shadow: 0 5px 5px 0 $rgb;
+          width: 200px;
+          span {
+            position: relative;
+            top: 2.58px;
+          }
+        }
+      }
+      .to_excel_fact_histo {
+        background: green;
+        position: relative;
+        padding: 12px 0 7px 0;
+        height: 38px;
+        top: -0.5px;
+      }
+      ._trash_fact_histo {
+        button {
+          background: red;
+          border: $n;
+          outline: $n;
+          color: $w;
+          padding: 6px 0 7px 0;
+          cursor: pointer;
+          box-shadow: 0 5px 5px 0 $rgb;
+          width: 200px;
+          span {
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+  .histo_fuct_child {
+    width: $wdd;
+    height: auto;
+    display: $f;
+    justify-content: space-around;
+    align-items: $c;
+    flex-wrap: wrap;
+    padding: 20px 0 20px 0;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th {
+      margin-bottom: 10px;
+      background: #000;
+      padding: 20px 0 20px 0;
+      color: $w;
+    }
+    td {
+      text-align: $c;
+      border-bottom: 3px solid grey;
+      color: $favouriteColor;
+      font-family: "Roboto", sans-serif;
+      padding: 10px 0 10px 0;
+      span {
+        cursor: pointer;
+      }
+    }
+    tr {
+      transition: 400ms ease-out;
+      &:hover {
+        background: $favouriteColor;
+        color: $w;
+        cursor: pointer;
+      }
+      &:hover td {
+        color: $w;
+      }
+    }
+  }
+}
+.delete_fact {
+  color: red;
+  transition: 400ms ease-out transform;
+  font-size: 25px;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.update_fact {
+  color: green;
+  transition: 400ms ease-out transform;
+  font-size: 25px;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.handle_msges_parent {
+  width: 100%;
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  position: fixed;
+  z-index: calc(99*9*9);
+  .handle_msges_child{
+    width: 20%;
+    background: $w;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    flex-direction: $cl;
+    position: fixed;
+    box-shadow: 0 5px 5px 0 $rgb;
+    border-left: 4px solid green;
+    border-radius:10px;
+    text-align: $c;
+  }
+  p{
+    color: $rgb;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 0;
+  }
+  span{
+    font-size: 30px;
+  }
+}
+.handleçloading_component_facturehisto{
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  width: 100%;
+  height: 100vh;
+}

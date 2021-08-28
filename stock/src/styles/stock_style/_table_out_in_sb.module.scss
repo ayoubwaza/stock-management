@@ -1,0 +1,99 @@
+.handlein_outSb {
+  width: 100%;
+  height: 100%;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  background: $favouriteColor;
+  padding: 20px 0 20px 0;
+  font-weight: $b;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  .handle_en_in_sbbtns {
+    width: 80%;
+    display: $f;
+    justify-content: space-evenly;
+    align-items: $c;
+    button {
+      background: $favouriteColor;
+      border: $n;
+      outline: $n;
+      color: $w;
+      padding: 6px 0 7px 0;
+      cursor: pointer;
+      box-shadow: 0 5px 5px 0 $rgb;
+      width: 200px;
+      span {
+        position: relative;
+        left: -8px;
+        font-size: 20px;
+        top: 4px;
+      }
+    }
+  }
+}
+.entree_sortieSb_Table_handler {
+  width: $wd;
+  height: 100%;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  .handle_table_wdd {
+    width: 75%;
+    height: 100%;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    flex-direction: $cl;
+    padding: 20px 0 20px 0;
+    table {
+      width: 100%;
+      text-align: $c;
+      border-collapse: collapse;
+      font-family: "Roboto", sans-serif;
+      thead {
+        background: $rgb;
+        color: white;
+      }
+      th,
+      td {
+        border-bottom: 2px solid $favouriteColor;
+        padding: 10px 0 10px 0;
+        width: 300px;
+      }
+    }
+  }
+}
+.ensrDates {
+  background: $rgb;
+  color: white;
+}
+.ensrGreen {
+  background: green;
+  color: white;
+}
+.ensrRed {
+  background: red;
+  color: white;
+}
+.center_loadingspinner {
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  height: 100vh;
+  width: 100%;
+}
+.to_excel_fact_histo {
+  background: green !important;
+  position: relative;
+  padding: 12px 0 7px 0;
+  height: 38px;
+  top: -0.5px;
+}
+.to_pdf {
+  button {
+    background: red !important;
+  }
+}

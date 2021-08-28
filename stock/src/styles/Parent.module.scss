@@ -1,0 +1,164 @@
+$c: center;
+$f: flex;
+$sp: space-around;
+$cl: column;
+$wd: 100%;
+$wdd: 80%;
+$b: bold;
+$n: none;
+$rgb: rgb(0, 0, 0);
+$favouriteColor: #348ce0;
+$colorBtns: orange;
+$w: white;
+.parent {
+  width: $wd;
+  height: $wd;
+}
+//Aside Styles
+.handle_aside {
+  position: fixed;
+  width: 350px;
+  background: $rgb;
+  bottom: 0;
+  top: 0;
+  display: $f;
+  flex-direction: $cl;
+  align-items: $c;
+  font-family: "Poppins";
+  img{
+    border:5px solid orange;
+    object-fit: cover;
+  }
+  .date_hour {
+    color: $w;
+    h2 {
+      font-size: 23px;
+    }
+    span {
+      margin-right:7px;
+      color: $colorBtns;
+      position: relative;
+      top: 3px;
+      font-size: 23px;
+      color: orange;
+    }
+  }
+  img {
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  hr {
+    width: 300px;
+  }
+  .compositions {
+    h4 {
+      margin: 0% 0% 20px 0%;
+    }
+    span {
+      margin-right: 10px;
+      color: $colorBtns;
+      position: relative;
+      top: 3px;
+      font-size: 23px;
+    }
+    i {
+      margin-left: 10px;
+      position: relative;
+      top: 6px;
+      font-size: 23px;
+      color: $colorBtns;
+      left: 10px;
+    }
+    color: $w;
+    cursor: pointer;
+  }
+  .composition_stock {
+    i {
+      left: 22px;
+    }
+    span {
+      left: -15px;
+    }
+  }
+  .composition_data {
+    i {
+      left: 35px;
+    }
+    span {
+      left: -27px;
+    }
+  }
+  .composition_param {
+    i {
+      left: 4px;
+    }
+    span {
+      left: 0px;
+    }
+  }
+  ._sub_stock {
+    position: relative;
+    padding-top: 10px;
+    top: 30px;
+    h4 {
+      color: $w;
+    }
+    span {
+      color: orange;
+      position: relative;
+      top: 2px;
+      margin-right: 10px;
+    }
+  }
+}
+//Content
+.content_pa {
+  margin-left: 350px;
+  height: $wd;
+  .header_content_pa {
+    width: $wd;
+    min-width: 100%;
+    max-width: 100%;
+    height: 200px;
+    display: $f;
+    justify-content: $sp;
+    align-items: center;
+    background:url("../Images/wave.svg"), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+      margin: 0;
+    }
+    .data_Product {
+      width: 200px;
+      border-radius: 32px;
+      text-align: $c;
+      font-family: "Poppins", sans-serif;
+      color: $w;
+      font-weight: $b;
+      box-shadow: 0 7px 7px 0 $rgb;
+    }
+    .lengtg_red {
+      background: red;
+    }
+    .lengtg_yellow {
+      background: rgb(174, 174, 20);
+    }
+    .lengtg_green {
+      background: green;
+    }
+    .lengtg_grey {
+      background: grey;
+    }
+  }
+}
+@import "./stock.module";
+@import "./Facturation.module";
+@import "./slimbody.module";
+@import "./historique_fuct";
+@import "./rubbish.module";
+@import "./historique_facture_bydates";
+@import "./stock_style/allProducts.module";
+@import "./stock_style/historiquesb.module";
+@import "./stock_style/table_out_in_sb.module";

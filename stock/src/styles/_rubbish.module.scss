@@ -1,0 +1,101 @@
+.parent_rub_fact {
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  .child_rub_fact {
+    width: $wd;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    flex-wrap: wrap;
+    .each_rub_list {
+      width: 600px;
+      padding: 20px 0 20px 0;
+      background: $favouriteColor;
+      margin: 10px;
+      display: $f;
+      justify-content: $sp;
+      align-items: $c;
+      ul {
+        i {
+          font-family: "Roboto", sans-serif;
+          color: $w;
+        }
+        li {
+          margin-bottom: 10px;
+          font-weight: $b;
+          list-style: $n;
+        }
+      }
+    }
+    .restore_rub_fact {
+      span {
+        color: rgb(52, 196, 52);
+        font-size: 23px;
+        cursor: pointer;
+      }
+      transition: 400ms ease-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .delete_dif_rub_fact {
+      span {
+        color: red;
+        font-size: 23px;
+        cursor: pointer;
+      }
+      transition: 400ms ease-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+.modaledel {
+  position: fixed;
+  width: $wd;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  .modaledel_child {
+    width: 50%;
+    height: 100vh;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+  }
+  .modaledel_content{
+      width: 500px;
+      background: $w;
+      border-radius: 30px;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      flex-direction: $cl;
+      padding: 30px 0 30px 0;
+      h3{
+          font-family: "Roboto",sans-serif;
+          text-align: $c;
+      }
+    ._handle_modaledel_btns{
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        button{
+            width: 150px;
+            margin: 10px;
+            cursor: pointer;
+            padding: 7px;
+            outline: $n;
+            border: $n;
+            font-weight: $b;
+            font-family: "Poppins",sans-serif;
+        }
+    }
+  }
+
+}

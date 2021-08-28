@@ -1,0 +1,183 @@
+.parent_allProducts {
+  width: $wd;
+  height: 100%;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  h1 {
+    font-family: "K2D", sans-serif;
+    color: $w;
+  }
+}
+.handle_products_details {
+  width: $wd;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  height: $wd;
+  padding: 20px 0 20px 0;
+  .content_products {
+    width: $wdd;
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-wrap: wrap;
+    .each_product_each {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(60%);
+      width: 350px;
+      max-width: 350px;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      flex-direction: $cl;
+      border-radius: 20px;
+      box-shadow: inset 10em 0 10em orange, 0 5px 5px 0 $rgb;
+      height: 650px;
+      max-height: 650px;
+      margin: 20px 0 20px 0;
+      transition: 400ms ease-in;
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      h1 {
+        color: $w;
+        font-family: "K2D", sans-serif;
+      }
+      .bg_each_product_each {
+        width: 350px;
+        max-width: 350px;
+        height: 350px;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        img {
+          object-fit: cover;
+          width: 50%;
+          height: $wd;
+        }
+      }
+      button {
+        border: $n;
+        outline: $n;
+        color: $w;
+        padding: 6px 0 7px 0;
+        cursor: pointer;
+        box-shadow: 0 5px 5px 0 $rgb;
+        width: 250px;
+        position: relative;
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-family: "K2D", sans-serif;
+        text-transform: uppercase;
+        background: orange;
+        span {
+          position: absolute;
+          right: 50px;
+          font-size: 20px;
+          top: 4px;
+          color: green;
+        }
+      }
+      .btn_histo_sb {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+.form_update_allproducts {
+  width: $wd;
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: calc(45 * 99999);
+  .form_pd {
+    width: $wdd;
+    height: 100%;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+  }
+  .handle_formupdateallprod {
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    flex-direction: $cl;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(60px);
+    height: 600px;
+    width: 400px;
+    border-radius: 20px;
+    .allp_icons {
+      position: relative;
+      i {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        font-size: 23px;
+        color: orange;
+      }
+    }
+    .form_up_all_prod {
+      span {
+        color: orange;
+        font-size: 30px;
+        transition: font-size 400ms ease-out;
+        margin: 0%;
+        &:hover {
+          transform: scale(1.2);
+          cursor: pointer;
+          font-size: 40px;
+        }
+      }
+    }
+    div {
+      margin-bottom: 20px;
+    }
+    label {
+      color: orange;
+      margin-left: 30px;
+    }
+    input {
+      width: 300px;
+      color: orange;
+      border-bottom: 2px solid orange;
+      padding-left: 30px;
+      &::placeholder {
+        color: orange;
+      }
+    }
+    button {
+      border: $n;
+      outline: $n;
+      color: $w;
+      padding: 6px 0 7px 0;
+      cursor: pointer;
+      box-shadow: 0 5px 5px 0 $rgb;
+      width: 200px;
+      position: relative;
+      font-weight: $b;
+      letter-spacing: 1.5px;
+      font-family: "Poppins", sans-serif;
+      background: orange;
+      span {
+        position: relative;
+        left: 8px;
+        font-size: 20px;
+        top: 4px;
+        color: green;
+      }
+    }
+  }
+}
+.allpro_aftermapping {
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+}
