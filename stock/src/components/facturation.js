@@ -13,7 +13,6 @@ import {
   AiFillCloseCircle,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import Loading from './loading';
 function Facturation() {
   const [formu, setFormu] = useState(false);
   const [ladate, setLaDate] = useState("");
@@ -40,7 +39,7 @@ function Facturation() {
     var url = "http://localhost:8000/add/facture/";
     const getalldata = await axios.post(url, data);
     setSubmitingMsg(getalldata.data);
-    setFormu(false)
+    setFormu(false);
   };
   return (
     <div>
@@ -174,7 +173,7 @@ function Facturation() {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  delay: 0.3,
+                  delay: 0.2,
                   type: "spring",
                   stiffness: 100,
                   damping: 30,
@@ -206,7 +205,7 @@ function Facturation() {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  delay: 0.6,
+                  delay: 0.4,
                   type: "spring",
                   stiffness: 100,
                   damping: 30,
@@ -237,7 +236,7 @@ function Facturation() {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  delay: 0.9,
+                  delay: 0.6,
                   type: "spring",
                   stiffness: 100,
                   damping: 30,
@@ -267,7 +266,7 @@ function Facturation() {
                 opacity: 2,
                 y: 0,
                 transition: {
-                  delay: 2,
+                  delay: 0.8,
                   type: "spring",
                   stiffness: 100,
                   damping: 30,

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import styles from "../../../styles/Parent.module.scss";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import { FcFullTrash, FcCalendar, FcHome } from "react-icons/fc";
+import { FcFullTrash, FcHome } from "react-icons/fc";
 import {
   AiFillEdit,
   AiOutlineArrowDown,
   AiOutlineArrowUp,
 } from "react-icons/ai";
 import { GiReturnArrow } from "react-icons/gi";
+import { motion } from "framer-motion";
+import { FcCalendar } from 'react-icons/fc'
 function HistoriqueGh() {
   const [getdata, setGetData] = useState([]);
   useEffect(() => {
@@ -75,7 +77,26 @@ function HistoriqueGh() {
     <div>
       <div className={styles.histo_sb}>
         <div className={styles.handle_title_histosb}>
-          <div className={styles.l}>
+          <motion.div
+            className={styles.l}
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
+              },
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
+          >
             <Link to="/">
               <button>
                 <span>
@@ -84,9 +105,28 @@ function HistoriqueGh() {
                 Accueil
               </button>
             </Link>
-          </div>
-          <div className={styles.e}>
-            <Link to="/filtrer/date/">
+          </motion.div>
+          <motion.div
+            className={styles.e}
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
+              },
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.6,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
+          >
+            <Link to="/filtrer/date/products">
               <button>
                 <span>
                   <FcCalendar />
@@ -94,7 +134,7 @@ function HistoriqueGh() {
                 Filtrer Par Date
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
         <div className={styles.handle_sb_table}>
           <div className={styles.histo_histosb_child}>

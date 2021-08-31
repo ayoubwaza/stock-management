@@ -25,8 +25,8 @@ $w: white;
   flex-direction: $cl;
   align-items: $c;
   font-family: "Poppins";
-  img{
-    border:5px solid orange;
+  img {
+    border: 5px solid orange;
     object-fit: cover;
   }
   .date_hour {
@@ -35,7 +35,7 @@ $w: white;
       font-size: 23px;
     }
     span {
-      margin-right:7px;
+      margin-right: 7px;
       color: $colorBtns;
       position: relative;
       top: 3px;
@@ -96,6 +96,13 @@ $w: white;
       left: 0px;
     }
   }
+  .composition_signout {
+    position: relative;
+    left: -13px;
+    span {
+      left: -1.2px;
+    }
+  }
   ._sub_stock {
     position: relative;
     padding-top: 10px;
@@ -123,7 +130,8 @@ $w: white;
     display: $f;
     justify-content: $sp;
     align-items: center;
-    background:url("../Images/wave.svg"), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+    background: url("../Images/wave.svg"),
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -162,3 +170,4 @@ $w: white;
 @import "./stock_style/allProducts.module";
 @import "./stock_style/historiquesb.module";
 @import "./stock_style/table_out_in_sb.module";
+@import "./stock_style/products_bydate.module";

@@ -35,7 +35,7 @@ function HistoriqueCl() {
     };
     fetchSlimBodyHistorique();
   }, []);
-  const TableHeaderSb = () => {
+  const TableHeaderCl = () => {
     return (
       <tr>
         <th>_Id</th>
@@ -55,7 +55,6 @@ function HistoriqueCl() {
             <AiOutlineArrowDown />
           </span>
         </th>
-
         <th>Date d'ajout</th>
         <th>Heure d'ajout</th>
         <th>Modifier</th>
@@ -63,7 +62,7 @@ function HistoriqueCl() {
       </tr>
     );
   };
-  const TableBodySb = () => {
+  const TableBodyCl = () => {
     return getdata.map((data, i) => {
       return (
         <tr key={i}>
@@ -91,8 +90,27 @@ function HistoriqueCl() {
   return (
     <div>
       <div className={styles.histo_sb}>
-        <div className={styles.handle_title_histosb}>
-          <div className={styles.l}>
+      <div className={styles.handle_title_histosb}>
+          <motion.div
+            className={styles.l}
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
+              },
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
+          >
             <Link to="/">
               <button>
                 <span>
@@ -101,9 +119,28 @@ function HistoriqueCl() {
                 Accueil
               </button>
             </Link>
-          </div>
-          <div className={styles.e}>
-            <Link to="/filtrer/date/">
+          </motion.div>
+          <motion.div
+            className={styles.e}
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
+              },
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.6,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
+          >
+            <Link to="/filtrer/date/products">
               <button>
                 <span>
                   <FcCalendar />
@@ -111,7 +148,7 @@ function HistoriqueCl() {
                 Filtrer Par Date
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
         <div className={styles.handle_sb_table}>
           <div className={styles.histo_histosb_child}>
@@ -145,8 +182,8 @@ function HistoriqueCl() {
                   </div>
                 ) : (
                   <>
-                    <thead>{TableHeaderSb()}</thead>
-                    <tbody>{TableBodySb()}</tbody>
+                    <thead>{TableHeaderCl()}</thead>
+                    <tbody>{TableBodyCl()}</tbody>
                   </>
                 )}
               </table>

@@ -9,6 +9,7 @@ import {
   AiOutlineArrowUp,
 } from "react-icons/ai";
 import { GiReturnArrow } from "react-icons/gi";
+import { motion } from "framer-motion";
 function HistoriqueGG() {
   const [getdata, setGetData] = useState([]);
   useEffect(() => {
@@ -75,7 +76,26 @@ function HistoriqueGG() {
     <div>
       <div className={styles.histo_sb}>
         <div className={styles.handle_title_histosb}>
-          <div className={styles.l}>
+          <motion.div
+            className={styles.l}
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
+              },
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
+          >
             <Link to="/">
               <button>
                 <span>
@@ -84,9 +104,28 @@ function HistoriqueGG() {
                 Accueil
               </button>
             </Link>
-          </div>
-          <div className={styles.e}>
-            <Link to="/filtrer/date/">
+          </motion.div>
+          <motion.div
+            className={styles.e}
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
+              },
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.6,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
+          >
+            <Link to="/filtrer/date/products">
               <button>
                 <span>
                   <FcCalendar />
@@ -94,7 +133,7 @@ function HistoriqueGG() {
                 Filtrer Par Date
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
         <div className={styles.handle_sb_table}>
           <div className={styles.histo_histosb_child}>

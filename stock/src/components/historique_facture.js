@@ -35,9 +35,9 @@ function HistoriqueFuct() {
         const getData = await Axios.get(url);
         setData(getData.data);
         if (getData.data.length <= 0) {
-           setControlNoData(true);
+          setControlNoData(true);
         } else {
-           setControlNoData(false);
+          setControlNoData(false);
         }
       } catch (err) {
         console.log(err);

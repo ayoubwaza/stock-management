@@ -7,3 +7,6 @@ body {
 a{
   text-decoration: none;
 }
+::-webkit-calendar-picker-indicator {
+  filter: invert(30) brightness(100%);
+}

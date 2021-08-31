@@ -150,7 +150,7 @@ function SortEntrSb() {
               },
             }}
           >
-            <Link to="/filtrer/date/">
+            <Link to="/filtrer/date/products">
               <button>
                 <span>
                   <FcCalendar />

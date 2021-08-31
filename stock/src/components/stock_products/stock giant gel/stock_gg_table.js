@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "../../../styles/Parent.module.scss";
 import Axios from "axios";
 import Loading from "../../loading";
-  import NoData from "../../../Images/no-data.png";
+import NoData from "../../../Images/no-data.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FcHome, FcCalendar, FcPlus } from "react-icons/fc";
@@ -85,7 +85,7 @@ function SortEntrGG() {
               transition: {
                 delay: 0.3,
                 type: "spring",
-                stiffness:50,
+                stiffness: 50,
                 damping: 30,
               },
             },
@@ -100,10 +100,10 @@ function SortEntrGG() {
             animate="ani"
             whileHover={{
               scale: 1.1,
-              transition:{
+              transition: {
                 ease: [0.17, 0.67, 0.83, 0.67],
-                delay:0.2
-              }
+                delay: 0.2,
+              },
             }}
             variants={{
               ini: {
@@ -116,7 +116,7 @@ function SortEntrGG() {
                 transition: {
                   delay: 0.2,
                   type: "spring",
-                  stiffness:50,
+                  stiffness: 50,
                 },
               },
             }}
@@ -145,12 +145,12 @@ function SortEntrGG() {
                 transition: {
                   delay: 0.4,
                   type: "spring",
-                  stiffness:50,
+                  stiffness: 50,
                 },
               },
             }}
           >
-            <Link to="/filtrer/date/">
+            <Link to="/filtrer/date/products">
               <button>
                 <span>
                   <FcCalendar />
@@ -174,7 +174,7 @@ function SortEntrGG() {
                 transition: {
                   delay: 0.6,
                   type: "spring",
-                  stiffness:50,
+                  stiffness: 50,
                 },
               },
             }}
@@ -189,23 +189,23 @@ function SortEntrGG() {
             </Link>
           </motion.div>
           <motion.div
-          initial="ini"
-          animate="ani"
-          variants={{
-            ini: {
-              opacity: 0,
-              y: -300,
-            },
-            ani: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: 0.8,
-                type: "spring",
-                stiffness:50,
+            initial="ini"
+            animate="ani"
+            variants={{
+              ini: {
+                opacity: 0,
+                y: -300,
               },
-            },
-          }}
+              ani: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.8,
+                  type: "spring",
+                  stiffness: 50,
+                },
+              },
+            }}
           >
             <ReactHTMLTableToExcel
               className={styles.to_excel_fact_histo}
@@ -230,7 +230,7 @@ function SortEntrGG() {
                 transition: {
                   delay: 1,
                   type: "spring",
-                  stiffness:50,
+                  stiffness: 50,
                 },
               },
             }}
@@ -265,7 +265,7 @@ function SortEntrGG() {
                   y: 200,
                   transition: {
                     type: "spring",
-                    stiffness:50,
+                    stiffness: 50,
                   },
                 },
               }}

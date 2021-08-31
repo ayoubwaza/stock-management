@@ -12,10 +12,12 @@ import {
   AiOutlineSetting,
   AiFillCalendar,
   AiFillFire,
+  AiOutlinePoweroff,
 } from "react-icons/ai";
 import Logo from "../Images/logo.webp";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { signOut, isAuthenticated } from "./auth/authorisations";
 function Parent() {
   const [stock, setStock] = useState(false);
   const [facturation, setFacturation] = useState(false);
@@ -280,6 +282,42 @@ function Parent() {
               </i>
             </h4>
           </motion.div>
+          {isAuthenticated() && (
+            <motion.div
+              className={`${styles.compositions} ${styles.composition_signout}`}
+              initial="ini"
+              animate="ani"
+              variants={{
+                ini: {
+                  opacity: 0,
+                  y: -300,
+                },
+                ani: {
+                  opacity: 1,
+                  y: 60,
+                  transition: {
+                    delay: 0.9,
+                    type: "spring",
+                    stiffness: 50,
+                  },
+                },
+              }}
+            >
+              <h4
+                onClick={() => { 
+                  signOut(() => {
+                    return (window.location = "/SignIn");
+                  })
+
+                }}
+              >
+                <span>
+                  <AiOutlinePoweroff />
+                </span>
+                Déconnecter
+              </h4>
+            </motion.div>
+          )}
         </motion.div>
         {/* *********************************************************** */}
         <motion.div className={styles.content_pa}>
