@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export function Authenticate(data,next) {
     if(typeof window !== "undefined"){
         localStorage.setItem('Token',JSON.stringify(data))

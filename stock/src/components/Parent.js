@@ -34,11 +34,10 @@ function Parent() {
             variants={{
               ini: {
                 opacity: 0,
-                rotate: -50,
               },
               ani: {
                 opacity: 1,
-                scale: [1, -2, 1],
+                scale: [1, -2, 0.8],
                 transition: {
                   delay: 0,
                   type: "spring",

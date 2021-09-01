@@ -1,6 +1,8 @@
 import React from "react";
-import { Switch, BrowserRouter,Route } from "react-router-dom";
-import PrivateRoute from './components/auth/PrivateRoutes'
+import { Switch, BrowserRouter, Route,Redirect } from "react-router-dom";
+import PrivateRoute from "./components/auth/PrivateRoutes";
+import axios from "axios";
+//import RoleBased from "./components/auth/controleAccess";
 const Parent = React.lazy(() => import("./components/Parent"));
 const HistoriqueFuct = React.lazy(() =>
   import("./components/historique_facture")
@@ -41,7 +43,23 @@ const HistoriquDateProducts = React.lazy(() =>
   import("./components/stock_products/product_historiqueDate")
 );
 const SignUp = React.lazy(() => import("./components/auth/SignUp"));
-const SignIn = React.lazy(() => import ("./components/auth/SignIn"))
+const SignIn = React.lazy(() => import("./components/auth/SignIn"));
+const DashboardUsers = React.lazy(() => import("./components/dashboardUsers"));
+
+export const RouteBased = async () => {
+  if (localStorage.getItem("Token")) {
+    const datafromStorage = JSON.parse(localStorage.getItem("Token"));
+    const userId = datafromStorage.Token.userIden;
+    const rolebyIdapi = await axios.get(
+      "http://localhost:8000/apis/api/get/user_id/" + userId
+    );
+    const exactRole = rolebyIdapi.data.role;
+    if (exactRole !== "admin") {
+      localStorage.removeItem("Token")
+      return (window.location = "/");
+    }
+  }
+}
 function App() {
   return (
     <div>
@@ -49,21 +67,33 @@ function App() {
         <Switch>
           <PrivateRoute path="/" exact component={Parent} />
           <PrivateRoute path="/facturation" exact component={Facturation} />
-          <PrivateRoute path="/facture/historique" exact component={HistoriqueFuct} />
+          <PrivateRoute
+            path="/facture/historique"
+            exact
+            component={HistoriqueFuct}
+          />
           <PrivateRoute path="/facture/rubbish" exact component={Rubbish} />
           <PrivateRoute
             path="/filtrer/date/"
             exact
             component={Historique_facturationDate}
           />
-          <PrivateRoute exact path="/all/products/"  component={AllProducts} />
-          <PrivateRoute exact path="/historique/slim-body" component={HistoriqueSb} />
+          <PrivateRoute exact path="/all/products/" component={AllProducts} />
+          <PrivateRoute
+            exact
+            path="/historique/slim-body"
+            component={HistoriqueSb}
+          />
           <PrivateRoute
             exact
             path="/historique/slimbody/out-in"
             component={SortEntrSb}
           />
-          <PrivateRoute exact path="/historique/giant-gel" component={HistoriqueGG} />
+          <PrivateRoute
+            exact
+            path="/historique/giant-gel"
+            component={HistoriqueGG}
+          />
           <PrivateRoute
             exact
             path="/historique/giantgel/out-in/"
@@ -93,6 +123,11 @@ function App() {
             exact
             path="/filtrer/date/products"
             component={HistoriquDateProducts}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/:userId"
+            component={DashboardUsers}
           />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/SignIn" component={SignIn} />

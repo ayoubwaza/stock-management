@@ -4,15 +4,14 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { motion } from "framer-motion";
-import { Authenticate } from './authorisations';
-import axios from 'axios';
+import { Authenticate } from "./authorisations";
+import axios from "axios";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -43,8 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor:'orange'
-
+    backgroundColor: "orange",
   },
 }));
 
@@ -61,8 +59,20 @@ export default function SignIn() {
     axios
       .post("http://localhost:8000/apis/api/signin/user/", myData)
       .then((response) => {
-        Authenticate(response.data, () => {
-          return (window.location = "/");
+        Authenticate(response.data, async () => {
+          if (localStorage.getItem("Token")) {
+            const datafromStorage = JSON.parse(localStorage.getItem("Token"));
+            const userId = datafromStorage.Token.userIden;
+            const rolebyIdapi = await axios.get(
+              "http://localhost:8000/apis/api/get/user_id/" + userId
+            );
+            const exactRole = rolebyIdapi.data.role;
+            if (exactRole === "admin") {
+              return (window.location = "/");
+            } else{
+                return (window.location = `/dashboard/user_uu/${userId}`);
+            }
+          }
         });
       })
       .catch((err) => alert(err.response.data));
@@ -120,7 +130,6 @@ export default function SignIn() {
                 variant="contained"
                 color="primary"
                 className={classes.submit}
-                
               >
                 s'identifier
               </Button>

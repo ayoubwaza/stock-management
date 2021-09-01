@@ -127,7 +127,7 @@ export default function SignUp() {
                 </Typography>
                 <form onSubmit={onSubmitUser} className={classes.form}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12}>
                       <TextField
                         autoComplete="fname"
                         name="firstName"
@@ -139,19 +139,6 @@ export default function SignUp() {
                         autoFocus
                         value={nom}
                         onChange={(e) => setNom(e.target.value)}
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        variant="outlined"
-                        required
-                        fullWidth
-                        id="lastName"
-                        label="Nom"
-                        name="lastName"
-                        autoComplete="lname"
-                        value={prenom}
-                        onChange={(e) => setPrenom(e.target.value)}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -194,6 +181,7 @@ export default function SignUp() {
                         </MenuItem>
                         <MenuItem value="user">User</MenuItem>
                         <MenuItem value="super_user">Super_User</MenuItem>
+                        <MenuItem value="siham">Siham</MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>

@@ -8,6 +8,7 @@ $b: bold;
 $n: none;
 $rgb: rgb(0, 0, 0);
 $favouriteColor: #348ce0;
+$lgColor:#00B5BE;
 $colorBtns: orange;
 $w: white;
 .parent {
@@ -25,10 +26,6 @@ $w: white;
   flex-direction: $cl;
   align-items: $c;
   font-family: "Poppins";
-  img {
-    border: 5px solid orange;
-    object-fit: cover;
-  }
   .date_hour {
     color: $w;
     h2 {
@@ -45,7 +42,6 @@ $w: white;
   }
   img {
     object-fit: cover;
-    border-radius: 100%;
   }
   hr {
     width: 300px;
@@ -171,3 +167,4 @@ $w: white;
 @import "./stock_style/historiquesb.module";
 @import "./stock_style/table_out_in_sb.module";
 @import "./stock_style/products_bydate.module";
+@import "./dashboardstyles/dashboard.module";

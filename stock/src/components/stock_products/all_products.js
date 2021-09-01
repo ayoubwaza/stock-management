@@ -18,7 +18,11 @@ import { TextField } from "@material-ui/core";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GiReturnArrow } from "react-icons/gi";
+import { RouteBased } from "../../App";
 function AllProducts() {
+  useEffect(() => {
+     RouteBased();
+  },[]);
   const [formUpdate, setFormUpdate] = useState(false);
   const [sbData, setSbData] = useState([]);
   const [stockValue, setStockValue] = useState("");

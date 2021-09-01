@@ -1,0 +1,47 @@
+.dash_users_aside {
+  width: 300px;
+  position: fixed;
+  bottom: 0;
+  background: #070130;
+  top: 0;
+  color: $w;
+  .dash_users_aside_wrapper {
+    .dash_users_aside_data {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      border-radius: 100%;
+      width: 200px;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      flex-direction: $cl;
+      position: relative;
+      text-align: left;
+
+      //height: 100px;
+      span {
+        color: $lgColor;
+        font-size: 40px;
+        position: absolute;
+        margin: 0;
+        left: 48px;
+        top: 8px;
+        max-height: 40px;
+        height: 40px;
+        svg {
+          max-height: 40px;
+        }
+      }
+      h4 {
+        text-align: left;
+        position: relative;
+        left: 120px;
+        width: 200px;
+      }
+    }
+  }
+}
+//*********************content NOT ASIDE haha
+.dash_users_content {
+  margin-left: 320px;
+}
