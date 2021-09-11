@@ -55,6 +55,7 @@ const NoAnswer = React.lazy(() => import("./components/data/noAnswered"));
 const PostPonned = React.lazy(() => import("./components/data/postPonned"));
 const Issue = React.lazy(() => import("./components/data/custom/issue"));
 const Analytics = React.lazy(() => import("./components/data/custom/analytics"));
+const TrafficKPI = React.lazy(() => import("./components/data/traffic_KPI"));
 export const RouteBased = async () => {
   if (localStorage.getItem("Token")) {
     const datafromStorage = JSON.parse(localStorage.getItem("Token"));
@@ -173,6 +174,11 @@ function App() {
             path="/dashboard/user_uu/analytics/:userId"
             exact
             component={Analytics}
+          />
+          <PrivateRoute
+          exact
+          path="/dashboard/user_uu/traffic/kpi/db/:userId"
+          component={TrafficKPI}
           />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/SignIn" component={SignIn} />

@@ -1,7 +1,7 @@
 export const NotSameUser = (Details) => {
   const getUser = JSON.parse(localStorage.getItem("Token"));
   const userId = getUser.Token.userIden;
-  if (Details.match.params.userId !== userId && Details.match.params.role !== "admin") {
+  if (Details.match.params.userId !== userId) {
     localStorage.removeItem("Token");
     return (window.location = "SignIn");
   } else {

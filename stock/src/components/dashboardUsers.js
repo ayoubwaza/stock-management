@@ -52,6 +52,7 @@ import {
   FaMinusCircle,
   FaPlusCircle,
   FaSadCry,
+  FaTrafficLight,
 } from "react-icons/fa";
 import { FiPhoneMissed } from "react-icons/fi";
 import { NotSameUser } from "./auth/controleAccess";
@@ -767,7 +768,9 @@ function DashboardUsers(props) {
             <span>
               <AiFillSignal />
             </span>
-            <Link to={`/dashboard/user_uu/analytics/${props.match.params.userId}`}>
+            <Link
+              to={`/dashboard/user_uu/analytics/${props.match.params.userId}`}
+            >
               <h4>Analytics</h4>
             </Link>
           </motion.div>
@@ -922,6 +925,26 @@ function DashboardUsers(props) {
               to={`/dashboard/user_uu/cancels/db/${props.match.params.userId}`}
             >
               <h4>Cancels</h4>
+            </Link>
+          </motion.div>
+          <motion.div
+            className={styles.dash_users_aside_data}
+            variants={itemsAside}
+            whileHover={{
+              scale: 1.1,
+              cursor: "pointer",
+              transition: {
+                ease: [0.17, 0.67, 0.83, 0.67],
+              },
+            }}
+          >
+            <span>
+              <FaTrafficLight />
+            </span>
+            <Link
+              to={`/dashboard/user_uu/traffic/kpi/db/${props.match.params.userId}`}
+            >
+              <h4>TRAFFiC KPI</h4>
             </Link>
           </motion.div>
           <motion.div
