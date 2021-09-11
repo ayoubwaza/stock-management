@@ -1,0 +1,312 @@
+.pending_Parent {
+  width: $wd;
+  height: $wd;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  .pending_title {
+    font-family: "Poppins", sans-serif;
+    color: $w;
+    background: $deepBg;
+    width: $wd;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    flex-direction: $cl;
+    padding: 0 0 20px 0;
+    .headrs_data_dashborad_each {
+      width: $wd;
+      justify-content: $sv;
+      display: $f;
+      align-items: $c;
+      .conf_btn {
+        button {
+          box-shadow: inset -10em 0 2.8em #00b5be, inset 2em 0 2.8em green;
+        }
+      }
+      .cance_btn {
+        button {
+          box-shadow: inset -10em 0 2.8em #00b5be, inset 2em 0 5em red;
+        }
+      }
+      .pannel_btn {
+        button {
+          box-shadow: inset -10em 0 2.8em #00b5be;
+        }
+      }
+      .noanswer_btn {
+        button {
+          box-shadow: inset -10em 0 2.8em #00b5be, inset 2em 0 5em red;
+        }
+      }
+      button {
+        width: 220px;
+        padding: 7px;
+        font-family: $pop;
+        font-weight: $b;
+        transition: 400ms ease-out;
+        border: $n;
+        outline: $n;
+        color: $w;
+        background: $n;
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .pending_Child {
+    width: 98%;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    padding: 20px 0 20px 0;
+    table {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(50px);
+      box-shadow: inset -10em 0 80em #00b5be;
+      padding: 20px 0 20px 0;
+      width: $wd;
+      border-collapse: collapse;
+      text-align: $c;
+      font-family: $pop;
+      cursor: pointer;
+      color: $w;
+    }
+    tr {
+      transition: 400ms ease-out;
+      &:hover {
+        background: $lgColor;
+        box-shadow: inset -10em 0 5em #00b5be;
+      }
+      border: 2px solid $deepBg;
+      th,
+      td {
+        padding: 7px;
+        border: 2px solid $deepBg;
+      }
+      td {
+        input {
+          border: none;
+          outline: none;
+        }
+      }
+      th {
+        background: $lgColor;
+      }
+    }
+  }
+}
+.Updates_pending {
+  width: $wd;
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  position: fixed;
+  z-index: 9999999;
+  background: rgba(0, 0, 0, 0.7);
+  .Updates_child_cancel {
+    background: red !important;
+  }
+  .Updates_child_ppnd {
+    background: orange !important;
+    span {
+      color: red !important;
+    }
+  }
+  .Updates_child_update {
+    background: green !important;
+  }
+  .Updates_child {
+    width: 400px;
+    height: 100%;
+    padding: 10px 0 10px 0;
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-direction: $cl;
+    font-family: "Poppins", sans-serif;
+    color: $w;
+    background: #2b2c4b;
+    border: 1px solid #00b5be;
+    box-shadow: inset 0 -20em 10em #00b5be;
+    border-radius: 20px;
+    span {
+      color: orange;
+      font-size: 30px;
+      margin-bottom: 20px;
+      transition: 400ms ease-out transform;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+    input {
+      width: 300px;
+      background: transparent;
+    }
+    label {
+      text-transform: uppercase;
+      color: $w;
+    }
+    button {
+      background: orange;
+      border: $n;
+      outline: $n;
+      color: $w;
+      padding: 6px 0 7px 0;
+      cursor: pointer;
+      box-shadow: 0 5px 5px 0 $rgb;
+      width: 200px;
+      span {
+        position: relative;
+        left: -8px;
+        font-size: 20px;
+        top: 4px;
+      }
+    }
+    .handle_alertBox {
+      width: 325px;
+      .MuiAlert-message {
+        font-family: "Poppins", sans-serif !important;
+      }
+    }
+    .param_handleInputs {
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.dayone_color_table {
+  background-color: green !important;
+}
+.daytwo_color_table {
+  background-color: rgb(161, 214, 161) !important;
+}
+.daythree_color_table {
+  background-color: rgb(231, 119, 231) !important;
+}
+.dayfour_color_table {
+  background-color: rgb(235, 147, 89) !important;
+}
+.index_select_first {
+  select {
+    text-transform: uppercase;
+    color: orange;
+    padding: 10px 7px 10px 0;
+    background: $n;
+    font-weight: $b;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: 325px;
+    border-radius: 5px;
+    border: 2px solid #78f8ff;
+    outline: $n;
+    option {
+      color: $w;
+      background: $n;
+      margin-bottom: 10px;
+      background: orange;
+      cursor: pointer;
+      outline: $n;
+    }
+  }
+}
+.index_select {
+  select {
+    text-transform: uppercase;
+    color: orange;
+    padding: 10px 7px 10px 0;
+    background: $n;
+    font-weight: $b;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: 325px;
+    border-radius: 5px;
+    border: 2px solid #78f8ff;
+    outline: $n;
+    option {
+      color: $w;
+      background: orange;
+    }
+  }
+}
+.cancel_pendColor {
+  background: red !important;
+}
+.postponned_pendColor {
+  background: yellow;
+  color: $rgb;
+}
+.callagain_pendColor {
+  background: orange !important;
+}
+.no_answer_pendColor {
+  background: rgb(221, 221, 207) !important;
+  color: $rgb;
+}
+.whatsApp_pend_green {
+  color: green;
+  font-size: 25px;
+}
+.whatsApp_pend_red {
+  color: red;
+  font-size: 25px;
+  width: 50px;
+}
+.pending_table_btns_edit {
+  button {
+    width: 30px;
+    padding: 7px;
+    height: 100%;
+    margin: 7px;
+    background: rgba(255, 255, 255, 0.23);
+    backdrop-filter: blur(50%);
+    box-shadow: 0 5px 5px 0 $rgb;
+    outline: $n;
+    border: $n;
+    transition: all 400ms ease-out;
+    border-radius: 20px;
+    span {
+      color: $w !important;
+    }
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+  .update_pend_db_btn {
+    background: green;
+  }
+  .confirmed_pend_db_btn {
+    background: yellowgreen;
+  }
+  .cancel_pend_db_btn {
+    background: red;
+  }
+  .pponned_pend_db_btn {
+    background: orange;
+  }
+  .no_answer_pend_db_btn {
+    background: rgb(170, 47, 68);
+  }
+}
+.handle_info_BTn {
+  margin-top: 10px;
+  button {
+    position: relative;
+    top: -5px;
+    color: $lgColor;
+    padding: 7px;
+    border: $n;
+    outline: $n;
+    margin-left: 10px;
+    box-shadow: 0 5px 5px 0 $rgb;
+    cursor: pointer;
+  }
+}

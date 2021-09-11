@@ -7,34 +7,41 @@ import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { motion } from "framer-motion";
 import { Authenticate } from "./authorisations";
 import axios from "axios";
+import styles from "../../styles/Parent.module.scss";
 function Copyright() {
+  const WhiteTextTypography = withStyles({
+    root: {
+      color: "#FFFFFF",
+      fontSize: "23px",
+    },
+  })(Typography);
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <WhiteTextTypography variant="body2" color="white" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://ownleads.net/">
+      <Link color="#fff" href="https://ownleads.net/">
         OwnLeads
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
-    </Typography>
+    </WhiteTextTypography>
   );
 }
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    color: "white",
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: "#00B5BE",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -42,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "orange",
+    backgroundColor: "#00B5BE",
   },
 }));
 
@@ -68,9 +75,9 @@ export default function SignIn() {
             );
             const exactRole = rolebyIdapi.data.role;
             if (exactRole === "admin") {
-              return (window.location = "/");
-            } else{
-                return (window.location = `/dashboard/user_uu/${userId}`);
+              return (window.location = "/admin/" + userId);
+            } else {
+              return (window.location = `/dashboard/user_uu/${userId}`);
             }
           }
         });
@@ -82,7 +89,7 @@ export default function SignIn() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-  body {  background:linear-gradient(to right , #348ce0 , white) !important;}
+  body   {background: rgba(7, 1, 48, 0.4) !important;}
 `,
         }}
       />
@@ -90,6 +97,7 @@ export default function SignIn() {
         initial={{ opacity: 0, y: -500 }}
         animate={{ opacity: 1, y: 100 }}
         transition={{ type: "spring", stiffness: 100 }}
+        className={styles.handle_styles_forSignIn}
       >
         <Container component="main" maxWidth="xs">
           <CssBaseline />

@@ -11,6 +11,10 @@ $favouriteColor: #348ce0;
 $lgColor: #00b5be;
 $colorBtns: orange;
 $w: white;
+$deepBg:#070130;
+$sv:space-evenly;
+$pop:"Poppins",sans-serif;
+$robo:"Roboto",sans-serif;
 .parent {
   width: $wd;
   height: $wd;
@@ -49,6 +53,7 @@ $w: white;
   .compositions {
     h4 {
       margin: 0% 0% 20px 0%;
+      color: $w;
     }
     span {
       margin-right: 10px;
@@ -168,3 +173,9 @@ $w: white;
 @import "./stock_style/table_out_in_sb.module";
 @import "./stock_style/products_bydate.module";
 @import "./dashboardstyles/dashboard.module";
+@import "./data_styles/pending.module";
+@import "./data_styles/confirmed.module";
+@import "./data_styles/canceled.module";
+@import "./auth-styles/signin.module";
+@import "./data_styles/issues.module";
+@import "./data_styles/analytics.module";

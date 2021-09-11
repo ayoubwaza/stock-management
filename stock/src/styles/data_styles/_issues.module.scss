@@ -1,0 +1,145 @@
+.issue_parent {
+  width: $wd;
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  background: url("../../Images/heiKey.svg");
+  background-position: $c;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  flex-direction: $cl;
+  .issue_child {
+    display: $f;
+    justify-content: space-evenly;
+    align-items: $c;
+    width: $wd;
+    h1 {
+      color: $w;
+      font-family: "K2D", sans-serif;
+      font-size: 80px;
+      text-align: $c;
+    }
+  }
+  button {
+    color: $w;
+    width: 400px;
+    padding: 10px;
+    box-shadow: inset -2.89em 0 3em $lgColor;
+    border: $n;
+    outline: $n;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(50px);
+    font-family: $pop;
+    text-transform: uppercase;
+    font-weight: $b;
+    letter-spacing: 2px;
+    transition: 400ms ease-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.issue_popUp {
+  width: $wd;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  z-index: 9999999;
+  .popUp_child {
+    background: rgba(59, 58, 58, 0.5);
+    width: 500px;
+    height: 400px;
+    display: $f;
+    justify-content: space-evenly;
+    align-items: $c;
+    flex-direction: $cl;
+    transform: scale(1.1);
+    box-shadow: 10px 10px 10px 10px $rgb,
+      inset -3.88em 0 8em rgba(255, 165, 0, 0.55);
+    position: relative;
+    label {
+      color: $w;
+    }
+    input {
+      width: 400px;
+      color: $w;
+      border: $w 2px solid;
+    }
+    textarea {
+      padding: 10px;
+      outline: $n;
+      border: $n;
+      color: $w;
+      width: 400px;
+      background: $n;
+      border-bottom: 2px solid orange;
+      &::placeholder {
+        color: $w;
+      }
+    }
+    button {
+      width: 300px;
+      background: orange;
+      padding: 7px;
+      color: $w;
+      border: $n;
+      outline: $n;
+      cursor: pointer;
+      font-family: $pop;
+      text-transform: uppercase;
+      font-weight: $b;
+      letter-spacing: 2px;
+      text-align: $c;
+      border-radius: 50px;
+      transition: 400ms ease-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      i {
+        position: relative;
+        margin-right: 10px;
+        font-size: 30px;
+        top: 5px;
+      }
+    }
+    .handle_close_issuePP {
+      transition: 400ms ease-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      span {
+        position: relative;
+        margin-right: 10px;
+        font-size: 30px;
+        color: orange;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.handle_btns_issue {
+  margin-top: 20px;
+  button {
+    width: 197px;
+    margin: 2px;
+  }
+}
+.seeAll_issues{
+  margin-top: 20px;
+}
+.issue_validatedFormAf{
+  width: $wd;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  z-index: 9999999;
+}

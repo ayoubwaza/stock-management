@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, BrowserRouter, Route,Redirect } from "react-router-dom";
+import { Switch, BrowserRouter, Route, Redirect } from "react-router-dom";
 import PrivateRoute from "./components/auth/PrivateRoutes";
 import axios from "axios";
 //import RoleBased from "./components/auth/controleAccess";
@@ -45,7 +45,16 @@ const HistoriquDateProducts = React.lazy(() =>
 const SignUp = React.lazy(() => import("./components/auth/SignUp"));
 const SignIn = React.lazy(() => import("./components/auth/SignIn"));
 const DashboardUsers = React.lazy(() => import("./components/dashboardUsers"));
-
+const Pending = React.lazy(() => import("./components/data/pending"));
+const PendingDb = React.lazy(() => import("./components/data/pending_db"));
+const ConfirmedLeadsdb = React.lazy(() =>
+  import("./components/data/confirmed_db")
+);
+const Canceled = React.lazy(() => import("./components/data/cancel"));
+const NoAnswer = React.lazy(() => import("./components/data/noAnswered"));
+const PostPonned = React.lazy(() => import("./components/data/postPonned"));
+const Issue = React.lazy(() => import("./components/data/custom/issue"));
+const Analytics = React.lazy(() => import("./components/data/custom/analytics"));
 export const RouteBased = async () => {
   if (localStorage.getItem("Token")) {
     const datafromStorage = JSON.parse(localStorage.getItem("Token"));
@@ -55,17 +64,17 @@ export const RouteBased = async () => {
     );
     const exactRole = rolebyIdapi.data.role;
     if (exactRole !== "admin") {
-      localStorage.removeItem("Token")
+      localStorage.removeItem("Token");
       return (window.location = "/");
     }
   }
-}
+};
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-          <PrivateRoute path="/" exact component={Parent} />
+          <PrivateRoute path="/admin/:id" exact component={Parent} />
           <PrivateRoute path="/facturation" exact component={Facturation} />
           <PrivateRoute
             path="/facture/historique"
@@ -128,6 +137,42 @@ function App() {
             exact
             path="/dashboard/user_uu/:userId"
             component={DashboardUsers}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/pending/:userId"
+            component={Pending}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/pending/db/:userId"
+            component={PendingDb}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/confirmed/db/:userId"
+            component={ConfirmedLeadsdb}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/cancels/db/:userId"
+            component={Canceled}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/no-answer/db/:userId"
+            component={NoAnswer}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/user_uu/post-ponned/db/:userId"
+            component={PostPonned}
+          />
+          <PrivateRoute path="/issues/user/:userId" exact component={Issue} />
+          <PrivateRoute
+            path="/dashboard/user_uu/analytics/:userId"
+            exact
+            component={Analytics}
           />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/SignIn" component={SignIn} />

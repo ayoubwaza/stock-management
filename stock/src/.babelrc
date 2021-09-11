@@ -1,4 +1,15 @@
 {
-  "presets": ["@babel/preset-react", "@babel/preset-env"],
+  "presets": [
+    "@babel/preset-react", "@babel/preset-env",
+    [
+      "@babel/preset-react",
+      {
+        "pragma": "dom",
+        "pragmaFrag": "DomFrag",
+        "throwIfNamespace": false, 
+        "runtime": "classic"
+      }
+    ]
+  ],
   "plugins": ["@emotion"]
 }

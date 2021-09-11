@@ -7,9 +7,14 @@
   background: #070130 !important;
   top: 0;
   color: $w;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  h4 {
+    color: $w !important;
+  }
   .dash_users_aside_wrapper {
     .dash_users_aside_logo {
-      height: 270px;
+      height: 150px;
       width: 100%;
       img {
         width: 100%;
@@ -141,14 +146,14 @@
     font-family: "Poppins", sans-serif;
     color: $w;
     margin: 0 20px 20px 0px;
-    box-shadow: inset -10em 0 10em #00b5be;
+    box-shadow: inset -10em 0 5.89em #00b5be;
     .confirmed_arrow {
       width: 100%;
       position: relative;
       display: $f;
       justify-content: $c;
       align-items: $c;
-      color: $lgColor;
+      color: rgb(48, 214, 48);
       position: relative;
       top: -10px;
       span {
@@ -244,7 +249,7 @@
         display: $f;
         justify-content: $c;
         align-items: $c;
-        color: $lgColor;
+        color: rgb(48, 214, 48);
         position: relative;
         top: -10px;
         span {
@@ -333,10 +338,10 @@
         top: 4px;
       }
     }
-    .handle_alertBox{
+    .handle_alertBox {
       width: 325px;
-      .MuiAlert-message{
-        font-family: "Poppins",sans-serif !important;
+      .MuiAlert-message {
+        font-family: "Poppins", sans-serif !important;
       }
     }
     .param_handleInputs {
@@ -345,4 +350,255 @@
       }
     }
   }
+}
+.showingUserData_parent {
+  width: $wd;
+  height: 100vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  position: fixed;
+  z-index: 9999999;
+  background: rgba(0, 0, 0, 0.7);
+  .showingUserData_child {
+    width: 400px;
+    height: 500px;
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-direction: $cl;
+    font-family: "Poppins", sans-serif;
+    color: $w;
+    background: #2b2c4b;
+    border: 1px solid #00b5be;
+    box-shadow: inset 0 -20em 10em #00b5be;
+    border-radius: 20px;
+    position: relative;
+    span {
+      color: orange;
+      font-size: 50px;
+      margin-bottom: 20px;
+      transition: 400ms ease-out transform;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+    ul {
+      margin: 0%;
+      padding: 0%;
+      li {
+        list-style-type: $n;
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      i {
+        position: absolute;
+        color: orange;
+        font-size: 25px;
+        left: 7px;
+      }
+    }
+  }
+}
+.each_user_notes_Parent {
+  width: 100%;
+  display: $f;
+  justify-content: flex-start;
+  align-items: $c;
+  flex-direction: $cl;
+  .camparing_title {
+    width: 100%;
+    display: $f;
+    justify-content: flex-start;
+    align-items: $c;
+    h2 {
+      margin-left: 10px;
+      font-family: "Poppins", sans-serif;
+      color: $w;
+      text-align: left;
+    }
+  }
+  padding: 20px 0 20px 0;
+  .each_user_notes_Child {
+    width: $wd;
+    display: $f;
+    justify-content: flex-start;
+    align-items: $c;
+    .notes_added_withBtn {
+      width: 300px;
+      height: 300px;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      padding: 20px 0 20px 0;
+      border-radius: 40px;
+      background: #2b2c4b;
+      text-align: $c;
+      font-family: "Poppins", sans-serif;
+      color: $w;
+      margin: 0 20px 20px 0px;
+      box-shadow: inset -10em 0 5.89em #00b5be;
+      .idss {
+        transition: 400ms ease-out;
+        font-size: 50px;
+        color: orange;
+        &:hover {
+          transform: scale(1.5);
+          cursor: pointer;
+        }
+      }
+    }
+    position: relative;
+    .notes_added_lists {
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: $n !important;
+        cursor: pointer;
+        border-radius: 100%;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $lgColor;
+      }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: orange;
+        cursor: pointer;
+      }
+      position: sticky;
+      left: 30%;
+      overflow-y: scroll;
+      border-radius: 40px 0 0px 40px;
+      width: 400px;
+      height: 300px;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      padding: 20px 0 20px 0;
+      background: #2b2c4b;
+      text-align: $c;
+      font-family: "Poppins", sans-serif;
+      color: $w;
+      margin: 0 20px 20px 0px;
+      box-shadow: inset -10em 0 5.89em #00b5be;
+      ul {
+        padding: 0%;
+      }
+      li {
+        margin-bottom: 20px;
+        list-style: $n;
+        width: 300px;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(50px);
+        padding: 10px 0 10px 0;
+      }
+      label {
+        text-transform: uppercase;
+        color: $w;
+      }
+      input {
+        background: $n;
+        &:hover,
+        &:focus {
+          background: $n;
+        }
+      }
+      .handle_btn_input_Notes {
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        flex-direction: $cl;
+        i {
+          font-size: 50px;
+          color: orange;
+          svg {
+            width: 200px;
+            height: 150px;
+          }
+        }
+        select {
+          width: 300px;
+          padding: 10px;
+          outline: $n;
+          border: $n;
+          box-shadow: 0 5px 5px 0 $rgb;
+          background: rgba(255, 255, 255, 0.23);
+          backdrop-filter: 50px;
+          color: $w;
+          font-family: $pop;
+          margin-bottom: 30px;
+          option {
+            color: orange;
+            background: $n;
+            background: rgba(34, 100, 102, 0.2);
+          }
+        }
+        span {
+          position: relative;
+          left: 0px;
+          font-size: 35px;
+          margin-left: 20px;
+          top: 4px;
+          transition: 400ms ease;
+          max-height: 35px;
+          &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+            color: orange;
+          }
+        }
+      }
+      .handle_Notes_users {
+        li {
+          box-shadow: 0 5px 5px 0 $rgb;
+          text-align-last: left;
+          padding-left: 10px;
+        }
+        i {
+          margin-right: 20px;
+          position: relative;
+          top: 1px;
+          color: rgb(61, 207, 61);
+        }
+      }
+    }
+    .dash_user_admin_Well{
+      box-shadow: inset -10em 0 10em #00b5be, 0 7px 7px 0 $rgb;
+      width: 720px;
+      margin-left: 60px;
+      height: 340px;
+      position: relative;
+      top: -12px;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      font-family: $pop;
+      color: $w;
+    }
+  }
+}
+//scroll
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2b2c4b;
+  cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $lgColor;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $lgColor;
+  cursor: pointer;
 }

@@ -1,0 +1,150 @@
+.analytics_parent {
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  width: $wd;
+  height: 100%;
+  color: $w;
+  h1 {
+    font-family: $pop;
+    color: $w;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 50px;
+  }
+  .analytics_child {
+    width: $wdd;
+    display: grid;
+    max-width: $wdd;
+    grid-template-columns: repeat(4, 400px);
+    grid-gap: 10px;
+  }
+  .first_Chart {
+    box-shadow: inset -10em 0 5.89em #30d6df;
+    padding: 10px 0 10px 0;
+    border-radius: 10px;
+  }
+  .months_top_confirmed {
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-direction: $cl;
+    box-shadow: inset 10em 0em 5.89em #00b5be, 0px 5px 5px 0 $rgb;
+    padding: 10px 0 10px 0;
+    font-family: $pop;
+    border-radius: 10px;
+    h2 {
+      text-transform: uppercase;
+    }
+    .months_top_firsTwo {
+      display: $f;
+      justify-content: $sp;
+      align-items: $c;
+      width: 100%;
+      .month_ {
+        background: #2b2c4b;
+        padding: 7px;
+        text-align: $c;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        flex-direction: $cl;
+        box-shadow: 0 7px 7px 0 $rgb;
+        width: 100px;
+        transition: 400ms ease-in;
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+          color: rgb(48, 214, 48);
+        }
+      }
+    }
+  }
+  .months_top_cancels {
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-direction: $cl;
+    box-shadow: inset 0em 10em 5.89em #00b5be, 0px 5px 5px 0 $rgb;
+    padding: 10px 0 10px 0;
+    font-family: $pop;
+    border-radius: 10px;
+    h2 {
+      text-transform: uppercase;
+    }
+    .months_top_firsTwo {
+      display: $f;
+      justify-content: $sp;
+      align-items: $c;
+      width: 100%;
+      .month_ {
+        background: #2b2c4b;
+        padding: 7px;
+        text-align: $c;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        flex-direction: $cl;
+        box-shadow: 0 7px 7px 0 $rgb;
+        width: 100px;
+        transition: 400ms ease-in;
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+          color: red;
+        }
+      }
+    }
+  }
+  .months_top_deliveredRetourned {
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-direction: $cl;
+    box-shadow: inset 0em 10em 5.89em #00b5be, 0px 5px 5px 0 $rgb;
+    padding: 10px 0 10px 0;
+    font-family: $pop;
+    border-radius: 10px;
+    h2 {
+      text-transform: uppercase;
+    }
+    .months_top_firsTwo {
+      display: $f;
+      justify-content: $sp;
+      align-items: $c;
+      width: 100%;
+      .month_ {
+        background: #2b2c4b;
+        padding: 7px;
+        text-align: $c;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        flex-direction: $cl;
+        box-shadow: 0 7px 7px 0 $rgb;
+        width: 100px;
+        transition: 400ms ease-in;
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+          color: yellow;
+        }
+      }
+    }
+  }
+  .ana_agadirConfirmed {
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    flex-direction: $cl;
+    box-shadow: inset 0em 0em 5.89em #00b5be, 0px 5px 5px 0 $rgb;
+    padding: 10px 0 10px 0;
+    font-family: $pop;
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}

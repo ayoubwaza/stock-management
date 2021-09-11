@@ -8,7 +8,7 @@ function Loading() {
     margin: 0 auto;
     border-color: red;
   `;
-  const color = "#348ce0";
+  const color = "#00B5BE";
   return (
     <div
       style={{
@@ -21,6 +21,13 @@ function Loading() {
         flexDirection: "column",
       }}
     >
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+                  body {background: rgba(7, 1, 48, 0.9);}
+          `,
+        }}
+      />
       <div>
         <RingLoader
           speedMultiplier={2}

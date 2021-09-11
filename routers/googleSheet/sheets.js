@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 var { GoogleSpreadsheet } = require("google-spreadsheet");
 const SPREADSHEET_ID = "1TpBzZacSeRbeMl7rJVy6-mpPNsZ_DJNxv3cgxTNZDmc";
-router.get("/siham", async (req, res) => {
+router.get("/api/sheet/data/kjzdfhuajdfjklj/siham", async (req, res, next) => {
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
   const appendSpreadsheet = async () => {
     try {
@@ -15,15 +15,38 @@ router.get("/siham", async (req, res) => {
       await doc.loadInfo();
       const sheet = doc.sheetsById[0];
       const rows = await sheet.getRows();
-      //sheets Data for each Row
-      rows.map((g) => {
-        console.log(g._rawData[0]);
+      //const MyCells = await sheet.loadCells("A:A");
+      console.log(rows);
+      rows.forEach((deltaSiham) => {
+       const delta = deltaSiham._rawData[1];
+      // console.log(delta);
+       console.log(rows);
       });
-      //sheet titles
-      console.log(sheet.headerValues[0]);
+      //seatting headrs
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+      res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+      );
+      res.setHeader(
+        "Access-Control-Allow-Headers",
+        "X-Requested-With,content-type"
+      );
+      res.setHeader("Access-Control-Allow-Credentials", true);
     } catch (e) {
       console.error("Error: ", e);
     }
+    // access cells using a zero-based index
+      //sheets Data for each Row
+      /* 
+      rows.map((deltaSiham) => {
+        return res.status(202).json({
+          confirmed: deltaSiham._rawData[0],
+          cancel: deltaSiham._rawData[1],
+          NoAnswer: deltaSiham._rawData[2],
+        });
+      });
+      */
   };
   appendSpreadsheet();
 });

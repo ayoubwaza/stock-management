@@ -1,0 +1,13 @@
+.handle_styles_forSignIn{
+    label{
+        color: $w !important;
+        &:focus{
+            color: $w;
+        }
+    }
+    form{
+        box-shadow: inset -2.89em 0  10em $lgColor;
+        padding: 50px;
+        border-radius: 40px;
+    }
+}
