@@ -68,6 +68,6 @@ app.listen(PORT, () => {
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('stock/build'));
   app.get("*",(req,res) => {
-      res.sendFile(path.join(__dirname, 'Client','build','index.html'));
+      res.sendFile(path.join(__dirname, 'stock','build','index.html'));
   })
 }
