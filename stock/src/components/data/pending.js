@@ -17,7 +17,7 @@ function Pending(props) {
     setItemInfo(GetInfoAlert);
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -70,7 +70,7 @@ function Pending(props) {
       dataPending: confirmedData,
     };
     await axios.post(
-      "http://localhost:8000/apis/api/pending/userid/all_All/",
+      "https://ownleads-apps.herokuapp.com/apis/api/pending/userid/all_All/",
       data
     );
   };

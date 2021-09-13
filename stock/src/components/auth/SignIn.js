@@ -64,14 +64,14 @@ export default function SignIn() {
       password: password,
     };
     axios
-      .post("http://localhost:8000/apis/api/signin/user/", myData)
+      .post("https://ownleads-apps.herokuapp.com/apis/api/signin/user/", myData)
       .then((response) => {
         Authenticate(response.data, async () => {
           if (localStorage.getItem("Token")) {
             const datafromStorage = JSON.parse(localStorage.getItem("Token"));
             const userId = datafromStorage.Token.userIden;
             const rolebyIdapi = await axios.get(
-              "http://localhost:8000/apis/api/get/user_id/" + userId
+              "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" + userId
             );
             const exactRole = rolebyIdapi.data.role;
             if (exactRole === "admin") {

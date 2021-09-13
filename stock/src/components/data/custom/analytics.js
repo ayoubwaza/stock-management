@@ -23,11 +23,11 @@ function Analytics(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const dataOct =
-        "http://localhost:8000/apis/alldata/by/dates/month/Siham/";
+        "https://ownleads-apps.herokuapp.com/apis/alldata/by/dates/month/Siham/";
       const dataNov =
-        "http://localhost:8000/apis/alldata/by/dates/month/Siham/nov/";
+        "https://ownleads-apps.herokuapp.com/apis/alldata/by/dates/month/Siham/nov/";
       const dataDec =
-        "http://localhost:8000/apis/alldata/by/dates/month/Siham/dec/";
+        "https://ownleads-apps.herokuapp.com/apis/alldata/by/dates/month/Siham/dec/";
       const [dataOctData, dataNovData, dataDecData] = await axios.all([
         axios.get(dataOct),
         axios.get(dataNov),
@@ -38,7 +38,7 @@ function Analytics(props) {
       setNov(dataNovData.data.length);
       setDec(dataDecData.data.length);
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);

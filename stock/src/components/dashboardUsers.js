@@ -62,6 +62,7 @@ import { ImSad2, ImHappy2 } from "react-icons/im";
 import { HiEmojiHappy } from "react-icons/hi";
 import Smiley from "../Images/smiley.svg";
 import SuperSmile from "../Images/superSmile.svg";
+require('dotenv').config();
 function DashboardUsers(props) {
   const [userData, setUserData] = useState([]);
   const [openUserData, setOpenUserData] = useState(false);
@@ -85,7 +86,7 @@ function DashboardUsers(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -94,13 +95,13 @@ function DashboardUsers(props) {
     //getData from Database
     const GetData = async () => {
       const confirmedData =
-        "http://localhost:8000/apis/get/all/siham/confirmed/";
+      `https://ownleads-apps.herokuapp.com/apis/get/all/siham/confirmed/`;
       const noAnsweredData =
-        "http://localhost:8000/apis/bring/noAnswers/data/all";
-      const PendingData = "http://localhost:8000/apis/pending/db/all/";
-      const PostPonnedData = "http://localhost:8000/apis/postponned/siham/all";
-      const CanceledData = "http://localhost:8000/apis/canceled/siham/all";
-      const getNotesLink = "http://localhost:8000/apis/getAll/siham/Notes";
+        "https://ownleads-apps.herokuapp.com/apis/bring/noAnswers/data/all";
+      const PendingData = "https://ownleads-apps.herokuapp.com/apis/pending/db/all/";
+      const PostPonnedData = "https://ownleads-apps.herokuapp.com/apis/postponned/siham/all";
+      const CanceledData = "https://ownleads-apps.herokuapp.com/apis/canceled/siham/all";
+      const getNotesLink = "https://ownleads-apps.herokuapp.com/apis/getAll/siham/Notes";
       const [confirmed, noAnswer, PendinG, pp, cancels, getNotes] =
         await axios.all([
           axios.get(confirmedData),
@@ -222,7 +223,7 @@ function DashboardUsers(props) {
       const Data = {
         content: noteValue,
       };
-      const url = "http://localhost:8000/apis/newSiham/Notes";
+      const url = "https://ownleads-apps.herokuapp.com/apis/newSiham/Notes";
       await axios.post(url, Data);
       return window.location.reload();
     } catch (error) {

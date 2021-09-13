@@ -45,7 +45,7 @@ function ConfirmedLeadsdb(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -54,7 +54,7 @@ function ConfirmedLeadsdb(props) {
   }, []);
   useEffect(() => {
     const HandleConfirmedgData = async () => {
-      const pdburl = "http://localhost:8000/apis/get/all/siham/confirmed/";
+      const pdburl = "https://ownleads-apps.herokuapp.com/apis/get/all/siham/confirmed/";
       try {
         setLoading(true);
         const dataPendingDb = await axios.get(pdburl);
@@ -75,7 +75,7 @@ function ConfirmedLeadsdb(props) {
   const GetupdateClientData = async (idClt) => {
     setUpdatesPopUp(true);
     const GetWaitingUpdatedClientdata = await axios.get(
-      "http://localhost:8000/apis/pending/siham/confirmed/db/all/" + idClt
+      "https://ownleads-apps.herokuapp.com/apis/pending/siham/confirmed/db/all/" + idClt
     );
     setname(GetWaitingUpdatedClientdata.data.name);
     setCity(GetWaitingUpdatedClientdata.data.city);
@@ -101,7 +101,7 @@ function ConfirmedLeadsdb(props) {
         delivered_not: delivered_not,
       };
       await axios.put(
-        "http://localhost:8000/apis/confirmed/clt/db/" + Iidup,
+        "https://ownleads-apps.herokuapp.com/apis/confirmed/clt/db/" + Iidup,
         dataUpdatedConf
       );
     } catch (error) {
@@ -143,7 +143,7 @@ function ConfirmedLeadsdb(props) {
       mehdi: "",
     };
     const url =
-      "http://localhost:8000/apis/from/confirmed/reload/cancel/" + argId;
+      "https://ownleads-apps.herokuapp.com/apis/from/confirmed/reload/cancel/" + argId;
     await axios.post(url, dataToCancel);
     return window.location.reload();
   };
@@ -153,7 +153,7 @@ function ConfirmedLeadsdb(props) {
       endDate: endDate,
     };
     try {
-      const url = "http://localhost:8000/apis/get/confirmed/siham/by/Dates/";
+      const url = "https://ownleads-apps.herokuapp.com/apis/get/confirmed/siham/by/Dates/";
       const AwaitdataConfDates = await axios.post(url, dataDates);
       setConfDataDates(AwaitdataConfDates.data);
       setComingDataDate(true)

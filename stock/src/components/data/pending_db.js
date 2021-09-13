@@ -123,7 +123,7 @@ function Pending(props) {
         dataUpdated
       );
     } catch (error) {
-      console.log("err : " + " " + error);
+      console.log(error);
     }
   };
   //motion
@@ -325,7 +325,7 @@ function Pending(props) {
         })
       );
     } catch (error) {
-      console.log("err : " + " " + error);
+      console.log(error);
     }
   };
   //post Ponned Form Data
@@ -349,7 +349,7 @@ function Pending(props) {
         })
       );
     } catch (error) {
-      console.log("err : " + " " + error);
+      console.log(error);
     }
   };
   //Cancel Form Data
@@ -365,7 +365,7 @@ function Pending(props) {
         mehdi: mehdicommentaire,
       };
       const url =
-        "http://localhost:8000/apis/remove/pending/lead/to/cancel/" + Iidup;
+        "https://ownleads-apps.herokuapp.com/apis/remove/pending/lead/to/cancel/" + Iidup;
       await axios.post(url, dataUpdatedCanceled);
       setDataPendDb(
         datapendDb.filter((iLux) => {
@@ -373,7 +373,7 @@ function Pending(props) {
         })
       );
     } catch (error) {
-      console.log("err : " + " " + error);
+      console.log(error);
     }
   };
   //no answer form data
@@ -393,7 +393,7 @@ function Pending(props) {
       );
       return window.location.reload();
     } catch (error) {
-      console.log("err : " + " " + error);
+      console.log(error);
     }
   };
   return (

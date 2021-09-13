@@ -13,7 +13,7 @@ function PostPonned(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -22,7 +22,7 @@ function PostPonned(props) {
   }, []);
   useEffect(() => {
     const HandleConfirmedgData = async () => {
-      const pdburl = "http://localhost:8000/apis/postponned/siham/all";
+      const pdburl = "https://ownleads-apps.herokuapp.com/apis/postponned/siham/all";
       try {
         setLoading(true);
         const dataPponnedDb = await axios.get(pdburl);
@@ -47,7 +47,7 @@ function PostPonned(props) {
       dataPonned.map((dt) => {
         if (ConverDate === dt.dateCall) {
           axios.delete(
-            "http://localhost:8000/apis/remove/ponned/to/pend/siham/" + dt._id
+            "https://ownleads-apps.herokuapp.com/apis/remove/ponned/to/pend/siham/" + dt._id
           );
           setDataPonneddDb(
             dataPonned.filter((dt) => {
@@ -173,13 +173,11 @@ function PostPonned(props) {
             <motion.div variants={itemsAside} className={styles.pannel_btn}>
               <button onClick={() => removePending()}>Update Data</button>
             </motion.div>
-            <motion.div variants={itemsAside} className={styles.pannel_btn}>
               <motion.div variants={itemsAside} className={styles.pannel_btn}>
                 <Link to={`/dashboard/user_uu/${props.match.params.userId}`}>
                   <button>DashBoard</button>
                 </Link>
               </motion.div>
-            </motion.div>
           </motion.div>
         </motion.div>
         <div className={styles.pending_Child}>

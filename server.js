@@ -36,6 +36,7 @@ var CancledSihamDb = require("./routers/auth/data_pccn/sihem_routers/cancels_by_
 var AnswerSihamDb = require("./routers/auth/data_pccn/sihem_routers/no_answer");
 var NoteSiham = require("./routers/auth/data_pccn/sihem_routers/NotesRouteSihame");
 var IssueData = require("./routers/auth/data_pccn/issuesRoute");
+var SihamTrrafic = require("./routers/auth/data_pccn/sihem_routers/traffic_route_sh");
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
@@ -60,6 +61,13 @@ app.use("/apis", CancledSihamDb);
 app.use("/apis", AnswerSihamDb);
 app.use("/apis", NoteSiham);
 app.use("/apis", IssueData);
+app.use("/apis",SihamTrrafic)
 app.listen(PORT, () => {
   console.log("server is runing ...");
 });
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('stock/build'));
+  app.get("*",(req,res) => {
+      res.sendFile(path.join(__dirname, 'Client','build','index.html'));
+  })
+}

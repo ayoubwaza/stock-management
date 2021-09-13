@@ -16,7 +16,7 @@ function Issue(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -53,7 +53,7 @@ function Issue(props) {
     },
   };
   const ValidataIssue = async () => {
-    const url = "http://localhost:8000/apis/adding/new/issue/";
+    const url = "https://ownleads-apps.herokuapp.com/apis/adding/new/issue/";
     try {
       setLoading(true);
       const data = {

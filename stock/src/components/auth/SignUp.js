@@ -87,7 +87,7 @@ export default function SignUp() {
         role: role,
       };
       const sendUser = await axios.post(
-        "http://localhost:8000/apis/api/signup/user/",
+        "https://ownleads-apps.herokuapp.com/apis/api/signup/user/",
         data
       );
       console.log(sendUser.data)

@@ -31,7 +31,7 @@ function Canceled(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -40,7 +40,7 @@ function Canceled(props) {
   }, []);
   useEffect(() => {
     const HandleConfirmedgData = async () => {
-      const pdburl = "http://localhost:8000/apis/canceled/siham/all";
+      const pdburl = "https://ownleads-apps.herokuapp.com/apis/canceled/siham/all";
       try {
         setLoading(true);
         const dataPendingDb = await axios.get(pdburl);
@@ -89,7 +89,7 @@ function Canceled(props) {
   const UpdateCanceledClient = async (uiArg) => {
     try {
       const getData = await axios.get(
-        "http://localhost:8000/apis/canceled/each/client/" + uiArg
+        "https://ownleads-apps.herokuapp.com/apis/canceled/each/client/" + uiArg
       );
       setname(getData.data.name);
       setCity(getData.data.city);
@@ -102,7 +102,7 @@ function Canceled(props) {
     }
   };
   const makeUpdatesCanceled = async () => {
-    const url = "http://localhost:8000/apis/canceled/clt/db/" + uidc;
+    const url = "https://ownleads-apps.herokuapp.com/apis/canceled/clt/db/" + uidc;
     const data = {
       name: name,
       city: city,

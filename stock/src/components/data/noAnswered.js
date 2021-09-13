@@ -37,7 +37,7 @@ function NoAnswer(props) {
   useEffect(() => {
     const fetchUserData = async () => {
       const waitingUserData = await axios.get(
-        "http://localhost:8000/apis/api/get/user_id/" +
+        "https://ownleads-apps.herokuapp.com/apis/api/get/user_id/" +
           props.match.params.userId
       );
       setUserData([waitingUserData.data]);
@@ -46,7 +46,7 @@ function NoAnswer(props) {
   }, []);
   useEffect(() => {
     const HandleNoAnswerData = async () => {
-      const pdburl = "http://localhost:8000/apis/bring/noAnswers/data/all";
+      const pdburl = "https://ownleads-apps.herokuapp.com/apis/bring/noAnswers/data/all";
       try {
         setLoading(true);
         const dataNoAnswer = await axios.get(pdburl);
@@ -66,7 +66,7 @@ function NoAnswer(props) {
   //update each client Data
   const GetupdateClientData = async (idClt) => {
     const GetWaitingUpdatedClientdata = await axios.get(
-      "http://localhost:8000/apis/get/nocanswer/" + idClt
+      "https://ownleads-apps.herokuapp.com/apis/get/nocanswer/" + idClt
     );
     setname(GetWaitingUpdatedClientdata.data.name);
     setCity(GetWaitingUpdatedClientdata.data.city);
@@ -94,7 +94,7 @@ function NoAnswer(props) {
         observation: observation,
       };
       await axios.put(
-        "http://localhost:8000/apis/noanswer/modifier/" + Iidup,
+        "https://ownleads-apps.herokuapp.com/apis/noanswer/modifier/" + Iidup,
         dataUpdated
       );
     } catch (error) {

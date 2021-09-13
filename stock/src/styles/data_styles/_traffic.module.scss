@@ -1,0 +1,136 @@
+.traffic_parent {
+  width: $wd;
+  height: $wd;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  .traffic_header {
+    background: $deepBg;
+    width: $wd;
+    h1 {
+      font-family: "Poppins", sans-serif;
+      color: $w;
+      width: $wd;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      flex-direction: $cl;
+      padding: 0 0 20px 0;
+    }
+  }
+  .traffic_child {
+    width: $wdd;
+    display: $f;
+    justify-content: $sv;
+    align-items: $c;
+    flex-wrap: wrap;
+  }
+  table {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px);
+    box-shadow: inset -10em 0 80em #00b5be;
+    padding: 20px 0 20px 0;
+    width: $wdd;
+    border-collapse: collapse;
+    text-align: $c;
+    font-family: $pop;
+    cursor: pointer;
+    color: $w;
+    font-weight: $b;
+  }
+  tr {
+    transition: 400ms ease-out;
+    &:hover {
+      background: $lgColor;
+      box-shadow: inset -10em 0 5em #00b5be;
+    }
+    border: 2px solid $deepBg;
+    th,
+    td {
+      padding:2px;
+      border: 2px solid $deepBg;
+    }
+    td {
+      input {
+        border: none;
+        outline: none;
+      }
+    }
+    th {
+      background: $lgColor;
+    }
+  }
+}
+.pending_title {
+  font-family: "Poppins", sans-serif;
+  color: $w;
+  background: $deepBg;
+  width: $wd;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  padding: 0 0 20px 0;
+  .headrs_data_dashborad_each {
+    width: $wd;
+    justify-content: $sv;
+    display: $f;
+    align-items: $c;
+    .conf_btn {
+      button {
+        box-shadow: inset -10em 0 2.8em #00b5be, inset 2em 0 2.8em green;
+      }
+    }
+    .cance_btn {
+      button {
+        box-shadow: inset -10em 0 2.8em #00b5be, inset 2em 0 5em red;
+      }
+    }
+    .pannel_btn {
+      button {
+        box-shadow: inset -10em 0 2.8em #00b5be;
+      }
+    }
+    .noanswer_btn {
+      button {
+        box-shadow: inset -10em 0 2.8em #00b5be, inset 2em 0 5em red;
+      }
+    }
+    button {
+      width: 220px;
+      padding: 7px;
+      font-family: $pop;
+      font-weight: $b;
+      transition: 400ms ease-out;
+      border: $n;
+      outline: $n;
+      color: $w;
+      background: $n;
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+}
+.traffic_serach_Bar{
+    display: $f;
+  margin-top: 20px;
+  button,input{
+    width: 280px;
+    padding: 7px;
+    background: $lgColor;
+    border: $n;
+    outline: $n;
+  }
+  button{
+    cursor: pointer;
+    font-weight: $b;
+    letter-spacing: 2px;
+    transition: 400ms ease-out;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}

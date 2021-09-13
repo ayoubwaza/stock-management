@@ -9,7 +9,7 @@ export const signOut = (next) => {
     if(typeof window !== "undefined"){
         localStorage.removeItem('Token');
         next();
-        axios.get('http://localhost:8000/SignOut')
+        axios.get('https://ownleads-apps.herokuapp.com/SignOut')
         .then((res) => res.data)
         .catch(err => console.log(err));
     }
